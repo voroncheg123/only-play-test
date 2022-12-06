@@ -1,10 +1,8 @@
 <?php
 declare(strict_types=1);
 
-require_once 'classes/Loader.php';
 require_once 'var_params.php';
-
-Loader::loadClasses();
+require_once 'autoload.php';
 
 $filesPath = PROJECT_ROOT.'/requests/';
 $logStorage = PROJECT_ROOT.'/logs/';
