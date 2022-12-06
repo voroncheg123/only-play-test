@@ -18,6 +18,14 @@ class Requester
 
         $resp = curl_exec($curl);
 
+        if($resp === false){
+            $falseMes = [];
+            $falseMes['success'] = false;
+            $falseMes['message'] = 'request failed';
+            $result = json_encode($falseMes);
+            return $result;
+        }
+
         curl_close($curl);
         return $resp;
     }
