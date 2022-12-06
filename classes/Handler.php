@@ -12,10 +12,9 @@ class Handler
         $this->filesStorage = $filesStorage;
         $this->logStorage = $logStorage;
         $this->paramsGeneratorsNames = $paramsGeneratorsNames;
-        $this->launchRequests();
     }
 
-    private function launchRequests(): void
+    public function launchRequests(): void
     {
         $pairsArray = ElemsGenerator::generatePairArray($this->filesStorage);
         $paramsGeneratorsObjects = ElemsGenerator::generateParamsGeneratorsObjectsArray($this->paramsGeneratorsNames);

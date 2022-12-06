@@ -9,4 +9,5 @@ Loader::loadClasses();
 $filesPath = PROJECT_ROOT.'/requests/';
 $logStorage = PROJECT_ROOT.'/logs/';
 
-new Handler($filesPath, $logStorage, ['json' => 'GenerateRequestParamsFromJson', 'xml' => 'GenerateRequestParamsFromXml']);
+$handlerObj = new Handler($filesPath, $logStorage, ['json' => 'GenerateRequestParamsFromJson', 'xml' => 'GenerateRequestParamsFromXml']);
+$handlerObj->launchRequests();
