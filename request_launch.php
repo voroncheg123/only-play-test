@@ -6,6 +6,7 @@ require_once 'var_params.php';
 
 Loader::loadClasses();
 
-$filesPath = '/Users/andrewvorona/only-play-test/test_task/requests/';
-$logStorage = '/Users/andrewvorona/only-play-test/test_root/logs/';
+$filesPath = PROJECT_ROOT.'/requests/';
+$logStorage = PROJECT_ROOT.'/logs/';
+
 new Handler($filesPath, $logStorage, ['json' => 'GenerateRequestParamsFromJson', 'xml' => 'GenerateRequestParamsFromXml']);

@@ -1,6 +1,6 @@
 <?php
 
-require_once PROJECT_ROOT.'interfaces/GenerateRequestParamsInterface.php';
+require_once PROJECT_ROOT.'/interfaces/GenerateRequestParamsInterface.php';
 
 class GenerateRequestParamsFromJson implements GenerateRequestParamsInterface
 {
