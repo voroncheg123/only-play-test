@@ -14,6 +14,14 @@ class Logger {
             foreach ($responses as $endPoint => $resp){
                 $respParams = json_decode($resp, true);
                 $logParams['request_type'] = $endPoint;
+
+                if(empty($resp) || $resp == '[]'){
+                    $respParams['success'] = false;
+                    $respParams['error_message'] = 'Empty response';
+                    $logParams['success'] = false;
+                    $logParams['error_message'] = 'Empty response';
+                }
+
                 if($respParams['success'] === true){
                     $logParams['success'] = $respParams['success'];
                     $logParams['error_message'] = '';
@@ -25,8 +33,6 @@ class Logger {
                     $logParams['error_message'] = $respParams['code'];
                 }elseif (!empty($respParams['message']) && $respParams['success'] === false){
                     $logParams['error_message'] = $respParams['message'];
-                }elseif (empty($resp)){
-                    $logParams['error_message'] = 'Empty response';
                 }
 
                 if(!empty($respParams['action_id'])){
